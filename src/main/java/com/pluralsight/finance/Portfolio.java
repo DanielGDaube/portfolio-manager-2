@@ -32,4 +32,14 @@ public class Portfolio {
         }
         return total;
     }
+
+    public Valuable getMostValuable(){
+        Valuable mostValuable = assets.get(0);
+        for (Valuable asset : assets){
+            if (asset.getValue().compareTo(mostValuable.getValue()) > 0){
+                mostValuable = asset;
+            }
+        }
+        return mostValuable;
+    }
 }

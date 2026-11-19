@@ -23,12 +23,7 @@ public class Portfolio {
     public BigDecimal getValue(){
         BigDecimal total = new BigDecimal("0");
         for (Valuable asset : assets){
-            if (asset instanceof CreditCard){
-                total = total.subtract(asset.getValue());
-            }
-            else {
-                total = total.add(asset.getValue());
-            }
+            total = total.add(asset.getValue());
         }
         return total;
     }

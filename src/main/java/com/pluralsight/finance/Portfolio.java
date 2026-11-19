@@ -14,4 +14,8 @@ public class Portfolio {
         this.owner = owner;
         assets = new ArrayList<>();
     }
+
+    public void add(Valuable asset){
+        assets.add(asset);
+    }
 }

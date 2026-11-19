@@ -1,7 +1,6 @@
 package com.pluralsight;
 
-import com.pluralsight.finance.BankAccount;
-import com.pluralsight.finance.Valuable;
+import com.pluralsight.finance.*;
 
 import java.math.BigDecimal;
 
@@ -52,5 +51,17 @@ public class FinanceApplication {
         // %.2f prints the amount with two decimal places, %n ends the line
         System.out.printf("Account 1 value: $%.2f%n", account1.getValue());
         System.out.printf("Account 2 value: $%.2f%n", account2.getValue());
+
+        Portfolio portfolio = new Portfolio("My Portfolio", "Daniel");
+        portfolio.add(new BankAccount("Daniel", "12345", new BigDecimal("14000.00")));
+        portfolio.add(new CreditCard("Daniel", "12345", new BigDecimal("400.00")));
+        portfolio.add(new Gold(5.3));
+        portfolio.add(new Jewelry(22.0));
+        portfolio.add(new House(1868, 1200,3));
+
+        System.out.println(portfolio.getValue());
+        System.out.println(portfolio.getLeastValuable());
+        System.out.println(portfolio.getMostValuable());
+
     }
 }
